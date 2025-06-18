@@ -45,7 +45,7 @@ python check_configs.py
 |----------------------|-------------------------------------------------------|
 | `valid_configs.txt`  | All configs that responded to ping                    |
 | `secure_configs.txt` | Only configs with TLS/Reality or secure cipher       |
-| `sub_file.txt`       | Base64 version ready for import into V2RayNG/NPV     |
+| `sub_file.txt`       | Base64 version ready for import   |
 
 ---
 

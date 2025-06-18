@@ -1,18 +1,20 @@
-# ⚡ V2Ray Config Tester & Exporter
+# ⚡ V2Ray Config Filter & Analyzer
 
-A Python script to **parse**, **ping**, **analyze**, and **export** V2Ray configurations (`vmess`, `vless`, `ss`, `trojan`) to a base64-encoded subscription file for clients like **V2RayNG** and **NapsternetV**.
+A Python script to **analyze** and **filter** configuration strings used in some proxy formats (e.g. vmess, vless, ss, trojan) based on basic **ping reachability** and **parameter checks**.
+
+> 🛑 **Important:** This tool does **not** provide, generate, promote, or facilitate VPN access or any circumvention services. It only analyzes text-based configuration strings already owned by the user.
 
 ---
 
 ## ✨ Features
 
-- ✅ Parse `vmess`, `vless`, `trojan`, and `shadowsocks` configs  
-- 📶 Check server availability using `ping`  
-- 🔐 Detect secure configs (TLS, Reality, or modern ciphers)  
-- 📝 Export useful files:
-  - `valid_configs.txt` — all reachable configs
-  - `secure_configs.txt` — only secure configs
-  - `sub_file.txt` — base64-encoded subscription for V2RayNG / NPV Tunnel
+- Parse `vmess`, `vless`, `trojan`, and `shadowsocks`-formatted strings
+- Check basic server reachability using ICMP ping
+- Detect basic encryption keywords (e.g. TLS)
+- Export filtered lists to:
+  - `valid_configs.txt` — configs that respond to ping
+  - `secure_configs.txt` — configs with security flags (e.g. tls, secure ciphers)
+  - `sub_file.txt` — base64-encoded version for personal use
 
 ---
 
@@ -41,22 +43,11 @@ python check_configs.py
 
 ## 📂 Output Files
 
-| File Name            | Description                                           |
-|----------------------|-------------------------------------------------------|
-| `valid_configs.txt`  | All configs that responded to ping                    |
-| `secure_configs.txt` | Only configs with TLS/Reality or secure cipher       |
-| `sub_file.txt`       | Base64 version ready for import   |
-
----
-
-## 🛡️ What is a "Secure" Config?
-
-A config is marked as **secure** if:
-
-- `vless`, `vmess`, or `trojan` includes `tls` or `reality` in the parameters.
-- `shadowsocks` uses secure ciphers such as:
-  - `aes-256-gcm`
-  - `chacha20-ietf-poly1305`
+| File Name            | Description                                               |
+|----------------------|-----------------------------------------------------------|
+| `valid_configs.txt`  | Config strings that responded to ping                     |
+| `secure_configs.txt` | Subset with TLS/secure ciphers for optional analysis      |
+| `sub_file.txt`       | Base64-encoded version for importing into external tools  |
 
 ---
 
@@ -66,25 +57,32 @@ A config is marked as **secure** if:
 🔒 VMESS | my-server | 1.2.3.4 | 83 ms
 ⚠️  SS    | shadowsocks | 8.8.8.8 | 210 ms
 ❌ TROJAN | test         | 5.5.5.5 | No response
-
-✅ Valid configs (2):
-🔒 VMESS | my-server | 1.2.3.4 | 83 ms
-⚠️  SS    | shadowsocks | 8.8.8.8 | 210 ms
 ```
 
 ---
 
-## ⚠️ Disclaimer
+## 🔐 Security Note
 
-This tool is for **educational and diagnostic purposes only**.  
-The author is **not responsible** for how this script is used.
+This tool simply checks text-based input using regex and ping.  
+It **does not establish any connections**, create proxy links, or bypass restrictions.
 
-> 📌 **Warning for restricted regions (e.g. Iran):**
-> This script does not give you access to VPN in any way and is merely a security testing tool.
-> Using, sharing, or distributing VPN tools may be subject to **legal risks** under local laws. Use this script **at your own risk** and responsibility.
+---
+
+## ⚠️ Legal & Ethical Notice
+
+This script is intended for:
+- Educational purposes
+- Local security testing
+- Learning how proxy config formats are structured
+
+> 📌 **This is NOT a VPN.**
+> It does NOT provide or unlock VPN, tunnel, proxy, or bypass functionality.
+
+Users are responsible for complying with **local laws** and **terms of service** of any third-party software they use.  
+The author assumes no liability for any misuse.
 
 ---
 
 ## 📄 License
 
-[MIT License](LICENSE) © 2025 [Arash Jahromi]
+MIT License © 2025 [Arash Jahromi]

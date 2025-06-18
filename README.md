@@ -79,7 +79,8 @@ A config is marked as **secure** if:
 This tool is for **educational and diagnostic purposes only**.  
 The author is **not responsible** for how this script is used.
 
-> 📌 **Warning for restricted regions (e.g. Iran):**  
+> 📌 **Warning for restricted regions (e.g. Iran):**
+> This script does not give you access to VPN in any way and is merely a security testing tool.
 > Using, sharing, or distributing VPN tools may be subject to **legal risks** under local laws. Use this script **at your own risk** and responsibility.
 
 ---

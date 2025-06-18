@@ -86,4 +86,4 @@ The author is **not responsible** for how this script is used.
 
 ## 📄 License
 
-[MIT License](LICENSE) © 2025 [Your Name]
+[MIT License](LICENSE) © 2025 [Arash Jahromi]

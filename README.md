@@ -21,7 +21,7 @@ A Python script to **parse**, **ping**, **analyze**, and **export** V2Ray config
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/v2ray-config-tester.git
+git clone https://github.com/Arash-GJ/v2ray-config-tester.git
 cd v2ray-config-tester
 ```
 
